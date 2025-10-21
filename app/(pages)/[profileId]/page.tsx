@@ -2,6 +2,7 @@ import ProjectCard from "@/app/components/commons/project-card";
 import TotalVisits from "@/app/components/commons/total-visits";
 import UserCard from "@/app/components/commons/user-card";
 import { Plus } from "lucide-react";
+import Link from "next/link";
 
 export default async function ProfilePage({
   params,
@@ -17,6 +18,11 @@ export default async function ProfilePage({
         <button className="text-accent-green font-bold">
           Faça o upgrade agora!
         </button>
+         <Link href={`/${profileId}/upgrade`}>
+          <button className="text-accent-green font-bold">
+            Faça o upgrade agora!
+          </button>
+        </Link>
       </div>
       <div className="w-1/2 flex justify-center h-min">
         <UserCard />

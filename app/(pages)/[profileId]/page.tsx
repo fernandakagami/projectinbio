@@ -1,7 +1,6 @@
 import ProjectCard from "@/app/components/commons/project-card";
 import TotalVisits from "@/app/components/commons/total-visits";
-import UserCard from "@/app/components/commons/user-card";
-import { Plus } from "lucide-react";
+import UserCard from "@/app/components/commons/user-card/user-card";
 import Link from "next/link";
 import NewProject from "./new-project";
 import {
@@ -55,7 +54,7 @@ export default async function ProfilePage({
             key={project.id}
             project={project}
             isOwner={isOwner}
-            img={await getDownloadURLFromPath(project.imagePath) as string}
+            img={(await getDownloadURLFromPath(project.imagePath)) || ""}
           />
         ))}
 

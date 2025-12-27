@@ -12,7 +12,7 @@ import { ProfileData } from "@/app/server/get-profile-data";
 export default function AddCustomLink({ profileData }: {profileData?: ProfileData}) {
   const router = useRouter();
   const { profileId } = useParams();
-
+  
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSavingCustomLinks, setIsSavingCustomLinks] = useState(false);
 

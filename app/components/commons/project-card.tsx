@@ -1,5 +1,6 @@
 "use client";
 
+import { formatUrl } from "@/app/lib/utils";
 import { ProjectData } from "@/app/server/get-profile-data";
 import Link from "next/link";
 
@@ -11,12 +12,8 @@ export default function ProjectCard({
   project: ProjectData;
   isOwner: boolean;
   img: string;
-}) { 
-  const projectUrl = project.projectUrl;
-  
-  const formattedUrl = projectUrl.startsWith("http")
-    ? projectUrl
-    : `https://${projectUrl}`;
+}) {     
+  const formattedUrl = formatUrl(project.projectUrl);
 
   function handleClick() {
     console.log("clicked"); // TODO: implementar analytics
